@@ -23,8 +23,10 @@
   <script>
     function pow(x, n) {
       /* function code is to be written, empty now */
+      console.log(Math.round(n), n)
+      if(n<0 || Math.round(n) != n) return NaN;
       if(n==0) return 1;
-      let res = pow(x,n/2);
+      let res = pow(x,Math.floor(n/2));
       res *=res;
       if(n&1) res *= x;
       return res;
