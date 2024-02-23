@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    begins
+    <script>
+        let name = prompt("Who's there?","Admin")
+        if(!name) alert("Canceled")
+        else if(name!="Admin") alert("I don't know you")
+        else{
+            let pass = prompt("Password?","TheMaster")
+            if(!pass) alert("Canceled")
+            else if(pass!="TheMaster") alert("Wrong password")
+            else alert("Welcome!")
+        }
+    </script>
+</body>
+</html>
