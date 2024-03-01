@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <pre id="result"> Result is: </pre>
+    <script>
+        function Calculator(){
+            this.arr = {
+                "+": (a,b) => a+b,
+                "-": (a,b) => a-b,
+            };
+
+            this.calculate = function(str){
+                tem = str.split(" ")
+                fn = this.arr[tem[1]];
+                
+                return fn(+tem[0],+tem[2]);
+            };
+
+            this.addMethod = function(sign, action){
+                this.arr[sign] = action;
+            };
+      }
+
+        let powerCalc = new Calculator;
+        powerCalc.addMethod("*", (a, b) => a * b);
+        powerCalc.addMethod("/", (a, b) => a / b);
+        powerCalc.addMethod("**", (a, b) => a ** b);
+
+        let result = powerCalc.calculate("2 ** 3");
+      
+      div = document.getElementById("result")
+      div.textContent += JSON.stringify(result,null, "	");
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <pre id="result"> Result is: </pre>
+    <script>
+        let john = { name: "John", age: 25 };
+        let pete = { name: "Pete", age: 30 };
+        let mary = { name: "Mary", age: 28 };
+        
+        let users = [ john, pete, mary ];
+        
+        let result = users.map((x) => x.name);
+
+        let ola = { name: "John", surname: "Smith", id: 1 };
+        let kamusta = { name: "Pete", surname: "Hunt", id: 2 };
+        let lory = { name: "Mary", surname: "Key", id: 3 };
+        users2 = [ola,kamusta,lory];
+        result = users2.map(x=>({
+            fullName: x.name+" "+x.surname,
+            id: x.id,
+        }));
+
+
+        result = users.sort((a,b)=>a.age-b.age);
+
+        // random shuffle
+        result = users.sort(() => Math.random() - 0.5)
+
+        // get average age
+        result = users.reduce((sum,a)=> sum+a.age,0)/users.length;
+        result = +result.toFixed(2);
+        
+      div = document.getElementById("result")
+      div.textContent += JSON.stringify(result,null, "	");
+    </script>
+</body>
+</html>

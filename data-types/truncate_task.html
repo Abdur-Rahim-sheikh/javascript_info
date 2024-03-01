@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <pre id="result"> Result is: </pre>
+    <script>
+      function truncate(str, len){
+        return (str.length > len)?
+            str.slice(0,len-1) + "...": str;
+      
+      }
+      res1 = truncate("What I'd like to tell on this topic is:", 20);
+      res2 = truncate("Hi everyone!", 20);
+      result = {res1:[res1,"What I'd like to te...", res1=="What I'd like to te..."], res2}
+      div = document.getElementById("result")
+      div.textContent += JSON.stringify(result,null, "	");
+    </script>
+</body>
+</html>

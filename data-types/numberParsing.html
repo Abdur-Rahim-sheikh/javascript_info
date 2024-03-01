@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <pre id="result"> Result is: </pre>
+    <script>
+       // + operator to make a string a number
+        result = +"123";
+        result = +"123z"; // NaN
+        // Number function to make a string a number
+        result = Number("123");
+        result = Number("123z"); // NaN
+        // parseInt and parseFloat to make a string a number 
+        // and truncate trailing characters
+        result = parseInt("123");
+        result = parseInt("123z"); // !!!! still valid
+        result = parseInt("123.45"); // 123
+        result = parseFloat("123.45"); // 123.45    
+        result = parseInt("FF", 16); // 255
+        result = parseInt("0o17", 8); // 15
+        result = parseInt("z124") // NaN
+       
+       div = document.getElementById("result")
+       div.textContent += JSON.stringify(result,null, "	");
+    </script>
+</body>
+</html>

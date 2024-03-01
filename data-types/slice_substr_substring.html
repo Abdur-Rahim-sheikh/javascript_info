@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+    <pre id="result"> Result is: </pre>
+    <script>
+      let str = "Hello abir";
+      
+      // slice(start[, end])	
+      //      - from start to end (not including end)
+      //      - allows negatives
+      res1 = str.slice(-5);
+
+      // substring(start[, end])	
+      //      - between start and end (not including end)	
+      //      - negative values mean 0
+      res2 = str.substring(-3, 5);
+
+      // substr(start[, length])	
+      //      - from start get length characters
+      //      - allows negative start
+        res3 = str.substr(-8, 5);
+
+        result = [res1, res2, res3];
+      div = document.getElementById("result")
+      div.textContent += JSON.stringify(result,null, "	");
+    </script>
+</body>
+</html>
